@@ -8,8 +8,8 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().contains("/add")) {
-            //String[] parameters = url.getQuery().split("=");
-            return "H";
+            String[] parameters = url.getQuery().split("=");
+            System.out.println(parameters[0]);
         }
 
         return "404 Not Found!";
