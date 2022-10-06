@@ -31,6 +31,10 @@ class Handler implements URLHandler {
 
                 return return_str;
             }
+
+            if (url.getPath().contains("/delete")) {
+                
+            }
         }
 
         return "404 Not Found!";
