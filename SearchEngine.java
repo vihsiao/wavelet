@@ -1,12 +1,17 @@
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 
 class Handler implements URLHandler {
     String s = "";
 
-    String[] queries = new String[1];
+    ArrayList<String> queries = new ArrayList<String>();
 
     public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            return queries.toString();
+        }
+
         if (url.getPath().contains("/add")) {
             String[] parameters = url.getQuery().split("=");
             System.out.println(parameters[0]);
